@@ -1,0 +1,99 @@
+/* Сообщения, ошибки полей и шапка с пользователем */
+.grow{flex:1}
+.usermenu{display:flex;align-items:center;gap:16px}
+.uname{font-weight:700;text-align:right;line-height:1.25}
+.uname small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+
+.alert{margin:20px 0 0;padding:14px 18px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid transparent}
+.alert-success{background:var(--ok-l);color:#0b6b36;border-color:#b9e6cb}
+.alert-error{background:var(--bad-l);color:#a52a2a;border-color:#f5c2c2}
+.alert-info{background:var(--info-l);color:var(--primary-d);border-color:#cfdcff}
+.auth .alert{margin:0 0 20px}
+
+.in.err{border-color:var(--bad)}
+.in.err:focus{outline-color:var(--bad)}
+.ferr{color:var(--bad);font-size:13px;font-weight:600;min-height:20px;margin-top:6px}
+
+main.cab{padding-top:28px;padding-bottom:56px}
+.cab h1{font-size:28px;font-weight:800}
+.cab .sub{color:var(--muted);margin:8px 0 24px}
+.cab .card{margin-bottom:20px}
+.muted{color:var(--muted)}
+.sm{font-size:13px}
+.stat .v.sm{font-size:22px;font-weight:800;margin-top:8px}
+.foot-mini{padding:24px 0;color:var(--muted);font-size:13px;text-align:center}
+
+@media(max-width:640px){
+  .uname small{display:none}
+  .uname{font-size:13px}
+  .usermenu{gap:10px}
+  .cab h1{font-size:23px}
+}
+
+.top .btn{white-space:nowrap}
+.navwrap{flex:1;display:flex}
+
+/* формы */
+.auth .card.wide{max-width:520px}
+.fld .hint{color:var(--muted);font-size:13px;margin-top:6px}
+.fld .hint + .ferr{margin-top:0}
+select.in{appearance:auto;padding-right:10px}
+.chk.inl{margin:0}
+.vform .chk{margin:6px 0 0}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.fgrid.f5{grid-template-columns:2fr 1fr 1fr 1fr 1fr}
+.filters{margin-bottom:16px}
+.filters .frow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.filters .acts,.tools .acts{display:flex;gap:10px}
+.filters .fld{margin-bottom:12px}
+.found{color:var(--muted);margin:0 0 14px;font-size:15px}
+.narrow{max-width:760px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.lnk{color:var(--primary);font-weight:600}
+.kv.wide{grid-template-columns:1fr auto}
+.kv.wide dd{text-align:right}
+.stats.three{grid-template-columns:repeat(3,1fr)}
+
+/* тарифы */
+.tlist{margin-top:8px;gap:28px 20px}
+.tariff .year{color:var(--muted);font-size:14px;margin-top:6px}
+.tariff .year b{color:var(--text)}
+
+/* список обращений и ответов */
+.appeal{padding:14px 0;border-bottom:1px solid var(--line)}
+.appeal:last-of-type{border-bottom:none}
+.appeal .ah{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.appeal p{margin:8px 0}
+.answer{background:var(--primary-l);border-radius:10px;padding:12px 14px;font-size:15px;margin:8px 0}
+.answerform{margin-top:10px}
+.answerform textarea.in{height:80px}
+.rowform{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.rowform .in.sm{height:36px;font-size:14px;width:auto;min-width:130px;flex:1}
+.rowform .btn{flex:none}
+td.actc{min-width:300px}
+
+/* статистика */
+.bar{display:grid;grid-template-columns:150px 1fr 30px;gap:12px;align-items:center;padding:7px 0;font-size:14px}
+.bar i{display:block;height:10px;border-radius:6px;background:var(--primary)}
+.bar b{text-align:right}
+
+.pager{display:flex;gap:6px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.pager a,.pager .cur{min-width:36px;height:36px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--line);font-weight:600;font-size:14px}
+.pager a{color:var(--primary);background:#fff}
+.pager .cur{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+@media(max-width:1024px){
+  .fgrid.f5{grid-template-columns:1fr 1fr}
+  .top .row > .navwrap{flex:none}
+  .top .usermenu{margin-left:auto}
+  .top .burger-btn{margin-left:0}
+  .top > .wrap > a.btn{margin-left:auto}
+}
+@media(max-width:640px){
+  .fgrid,.fgrid.f5{grid-template-columns:1fr}
+  .stats.three{grid-template-columns:1fr}
+  .uname{display:none}
+  .bar{grid-template-columns:110px 1fr 24px}
+  td.actc{min-width:0}
+  .rowform .in.sm{width:100%}
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ИнтерАлекс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <script defer src="assets/data.js"></script>
+  <script defer src="assets/storage.js"></script>
+  <script defer src="assets/validation.js"></script>
+  <script defer src="assets/views.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div id="page" style="display:contents"></div>
+  <footer class="foot-mini"><div class="wrap">© 2026 ИнтерАлекс. Все права защищены.</div></footer>
+
+  <template id="login-page">
+    <main class="auth">
+      <div class="card">
+        <h1>Вход в личный кабинет</h1>
+        <p class="s">Для абонентов и администраторов</p>
+        <form id="login-form" class="vform" method="post" data-action="login" novalidate>
+          <div class="fld">
+            <label class="f" for="login">Логин</label>
+            <input class="in" id="login" name="login" autocomplete="username" maxlength="50" aria-describedby="login-err" autofocus>
+            <div class="ferr" id="login-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="password">Пароль</label>
+            <input class="in" id="password" name="password" type="password" autocomplete="current-password" maxlength="72" aria-describedby="password-err">
+            <div class="ferr" id="password-err"></div>
+          </div>
+          <button class="btn" style="width:100%" type="submit">Войти</button>
+        </form>
+        <p class="help">Нет учётной записи? <a href="#/register">Зарегистрироваться</a></p>
+      </div>
+    </main>
+  </template>
+
+  <template id="register-page">
+    <main class="auth">
+      <div class="card wide">
+        <h1>Регистрация</h1>
+        <p class="s">Создайте личный кабинет абонента</p>
+        <form id="register-form" class="vform" method="post" data-action="register" novalidate>
+          <div class="fld">
+            <label class="f">ФИО</label>
+            <input class="in" id="full_name" name="full_name" autocomplete="name" maxlength="100" aria-describedby="full_name-err" autofocus>
+            <div class="ferr" id="full_name-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="login">Логин</label>
+            <input class="in" id="login" name="login" autocomplete="username" maxlength="50" aria-describedby="login-err">
+            <div class="hint">Латинские буквы, цифры и символы _ . @ -</div>
+            <div class="ferr" id="login-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="email">E-mail</label>
+            <input class="in" id="email" name="email" type="email" autocomplete="email" maxlength="100" aria-describedby="email-err">
+            <div class="ferr" id="email-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="phone">Телефон</label>
+            <input class="in" id="phone" name="phone" type="tel" autocomplete="tel" maxlength="20" placeholder="+7 (900) 123-45-67" aria-describedby="phone-err">
+            <div class="ferr" id="phone-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="password">Пароль</label>
+            <input class="in" id="password" name="password" type="password" autocomplete="new-password" maxlength="72" aria-describedby="password-err">
+            <div class="hint">Не менее 8 символов, буквы и цифры</div>
+            <div class="ferr" id="password-err"></div>
+          </div>
+          <div class="fld">
+            <label class="f" for="password2">Повторите пароль</label>
+            <input class="in" id="password2" name="password2" type="password" autocomplete="new-password" maxlength="72" aria-describedby="password2-err">
+            <div class="ferr" id="password2-err"></div>
+          </div>
+          <div class="fld">
+            <label class="chk">
+              <input id="agree" name="agree" type="checkbox" value="1" aria-describedby="agree-err">
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+            <div class="ferr" id="agree-err"></div>
+          </div>
+          <button class="btn" style="width:100%" type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="help">Уже есть учётная запись? <a href="#/login">Войти</a></p>
+      </div>
+    </main>
+  </template>
+</body>
+</html>
